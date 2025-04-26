@@ -24,14 +24,29 @@
 
 	--background-image-heroGradient: var(--heroGradient);
 	--background-image-skeletonGradient: var(--skeletonGradient);
-
+	--background-image-brandGradient: var(--brandGradient);
+  
 	--animate-skeleton: skeletonKeyframe 3s linear infinite;
+
+	--animate-float: float 5s ease-in-out infinite;
 
 	@keyframes skeletonKeyframe {
 		to {
 			transform: translateX(200%);
 		}
 	}
+
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-48px) rotateX(15deg) rotateY(-25deg);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
 }
 
 
@@ -68,6 +83,8 @@ body {
 
 
   --heroGradient: linear-gradient(260deg, rgba(127, 238, 100, 0.10) 0%, rgba(127, 238, 100, 0.00) 48.19%, rgba(127, 238, 100, 0.10) 100.24%);
+
+  --brandGradient: linear-gradient(90deg, #FFE000 0%, #7DFF16 100%);
 
 	--skeletonGradient: linear-gradient(
 		to right,

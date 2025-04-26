@@ -1,11 +1,113 @@
+import Image from "next/image";
+import Link from "next/link";
+
 export default function HomePage() {
+  const navLinks = [
+    {
+      label: 'Explore',
+      href: "#"
+    },
+    {
+      label: 'Market',
+      href: "#"
+    },
+
+    {
+      label: 'Community',
+      href: "#"
+    },
+    {
+      label: 'About',
+      href: "#"
+    },
+  ]
+
   return (
-    <div>
-      <header>
-        <nav>
-          
-        </nav>
-      </header>
+    <div className="bg-[#131313] overflow-x-hidden">
+      <div className="w-screen h-screen bg-[url('/Elements.png')] bg-cover bg-center">
+        <header className="container mx-auto">
+          <nav className="flex items-center justify-between">
+            <Link href="/" className="flex items-center gap-x-4">
+              <Image width={64} height={64} src="/logo.svg" alt="Amaz Logo" />
+              <strong className="font-ClashDisplayMedium text-white text-3xl">Amaz</strong>
+            </Link>
+
+            <ul className="flex items-center gap-x-8">
+              {navLinks.map(({ href, label }) => {
+                return (
+                  <li key={label}>
+                    <Link href={href}>
+                      <span className="text-[1rem] font-GeneralSansMedium text-white hover:opacity-70 transtion-300 duration-500">{label}</span>
+                    </Link>
+                  </li>
+                )
+              })}
+            </ul>
+
+            <div className="flex items-center gap-x-6">
+              <button className="text-base font-GeneralSansMedium text-white hover:cursor-pointer">
+                Buy
+              </button>
+              <button className="h-[100px] flex items-center px-8 text-[#131313] font-GeneralSansMedium text-base 
+                    bg-brandGradient transition-all duration-500 hover:cursor-pointer">
+                    <span>Sign In</span>
+                  </button>
+            </div>
+          </nav>
+        </header>
+
+        <div className="flex items-end mt-[90px] container mx-auto justify-between gap-x-24">
+          <div className="max-w-[787px]">
+            <h1 className="text-[6rem] leading-[120%] font-ClashDisplayMedium text-white">
+              Discover collect and sell your super NFTs
+            </h1>
+            <p className="max-w-[550px] block mt-4 text-[1.125rem] leading-[160%] font-GeneralSansRegular text-white">
+              A platform for buyers and sellers to buy and sell limited edition original art with over 1000 artists is now available.
+            </p>
+
+            <div className="mt-14 flex gap-x-12 items-stretch">
+              <div className="flex flex-col gap-y-1">
+                <h3 className="font-ClashDisplayMedium text-[2rem] text-white">23</h3>
+                <span className="text-[1rem] font-GeneralSansRegular text-[#A9B6B3]">Days</span>
+              </div>
+              <div className="flex flex-col gap-y-1">
+                <h3 className="font-ClashDisplayMedium text-[2rem] text-white">17</h3>
+                <span className="text-[1rem] font-GeneralSansRegular text-[#A9B6B3]">Hours</span>
+              </div>
+              <div className="flex flex-col gap-y-1">
+                <h3 className="font-ClashDisplayMedium text-[2rem] text-white">35</h3>
+                <span className="text-[1rem] font-GeneralSansRegular text-[#A9B6B3]">Minutes</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="max-w-[445px] w-full animate-float  translate-3d perspective-[1000px]">
+            <div className="bg-[#D9D9D9] w-full h-[454px]">
+
+            </div>
+            <Image src={""} alt="" width={0} height={0} />
+            <div className="p-4 flex flex-col gap-y-4 bg-white/10 backdrop-blur-[46px]">
+              <div className="flex items-center justify-between">
+                  <strong className="text-white font-ClashDisplayMedium text-[1.5rem]">AMAZ Token</strong>
+                  <span className="py-2 px-4 border border-white rounded-[16px] text-bvase text-white font-GeneralSansRegular">Place a Bid</span>
+              </div>
+              <div className="flex justify-between items-stretch">
+                  <div className="flex flex-col gap-y-1.5">
+                    <span className="text-base text-white/50 font-GeneralSansRegular">Current Bid</span>
+                    <span className="font-GeneralSansMedium text-white leading-[160%] text-[1.125rem]">15.65 ETH</span>
+                  </div>
+
+                  <div className="flex flex-col gap-y-1.5">
+                    <span className="text-base text-white/50 font-GeneralSansRegular">Remaining Time</span>
+                    <span className="font-GeneralSansMedium text-white leading-[160%] text-[1.125rem]">08 : 35 : 44</span>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+     
     </div>
   )
 }
