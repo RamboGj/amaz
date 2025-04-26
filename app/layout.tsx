@@ -2,17 +2,17 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-	// metadataBase: new URL("https://www.beadev.com.br"),
+	// metadataBase: new URL("https://www.Amaz.com.br"),
 	title: "Amaz | ERC20 Token",
 	description:
-		"Stay ahead with BeaDev — your go-to hub for technology news, development tips, and innovation insights.",
+		"Stay ahead with Amaz",
 	openGraph: {
 		type: "website",
-		// url: "https://www.beadev.com.br",
+		// url: "https://www.Amaz.com.br",
 		siteName: "Amaz",
 		title: "Amaz | ERC20 Token",
 		description:
-			"Stay ahead with BeaDev — your go-to hub for technology news, development tips, and innovation insights.",
+			"Stay ahead with Amaz",
 		images: [
 			{
 				url: "/og.png",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 		card: "summary_large_image",
 		title: "Amaz | ERC20 Token",
 		description:
-			"Stay ahead with BeaDev — your go-to hub for technology news, development tips, and innovation insights.",
+			"Stay ahead with Amaz",
 		images: ["/og.png"],
 	},
 	icons: {
