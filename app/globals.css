@@ -1,22 +1,41 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-green500: var(--green500);
+  --color-green400: var(--green400);
+
+	/* --color-neutral800: var(--neutral800);
+	--color-neutral700: var(--neutral700);
+	--color-neutral600: var(--neutral600); */
+	--color-neutral500: var(--neutral500);
+	/* --color-neutral400: var(--neutral400);
+	--color-neutral300: var(--neutral300);
+	--color-neutral200: var(--neutral200);
+	--color-neutral100: var(--neutral100); */
+
+	--font-SatoshiBlack: var(--SatoshiBlack);
+	--font-SatoshiBold: var(--SatoshiBold);
+	--font-SatoshiMedium: var(--SatoshiMedium);
+	--font-Satoshi: var(--Satoshi);
+
+	--background-image-heroGradient: var(--heroGradient);
+	--background-image-skeletonGradient: var(--skeletonGradient);
+
+	--animate-skeleton: skeletonKeyframe 3s linear infinite;
+
+	@keyframes skeletonKeyframe {
+		to {
+			transform: translateX(200%);
+		}
+	}
 }
 
+
+
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  :root {}
 }
 
 body {
@@ -24,3 +43,300 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+:root {
+  --green500: #67D269;
+  --green400: #7FEE64;
+
+  --neutral500: #838383;
+
+	--ClashExtralight: "ClashDisplay-Extralight", "sans-serif";
+	--ClashDisplayLight: "ClashDisplay-Light", "sans-serif";
+	--ClashDisplayRegular: "ClashDisplay-Regular", "sans-serif";
+	--ClashDisplayMedium: "ClashDisplay-Medium", "sans-serif";
+	--ClashDisplaySemibold: "ClashDisplay-Semibold", "sans-serif";
+	--ClashDisplayBold: "ClashDisplay-Bold", "sans-serif";
+
+
+  --heroGradient: linear-gradient(260deg, rgba(127, 238, 100, 0.10) 0%, rgba(127, 238, 100, 0.00) 48.19%, rgba(127, 238, 100, 0.10) 100.24%);
+
+	--skeletonGradient: linear-gradient(
+		to right,
+		transparent 0%,
+		var(--neutral500) 50%,
+		transparent 100%
+	);
+}
+
+.dark {}
+
+@layer base {
+	body {
+		@apply bg-neutral600 text-neutral100;
+	}
+}
+
+
+/**
+* @license
+*
+* Font Family: Clash Display
+* Designed by: Indian Type Foundry
+* URL: https://www.fontshare.com/fonts/clash-display
+* © 2025 Indian Type Foundry
+*
+* Clash Display Extralight 
+* Clash Display Light 
+* Clash Display Regular 
+* Clash Display Medium 
+* Clash Display Semibold 
+* Clash Display Bold 
+* Clash Display Variable (Variable font)
+
+*
+*/
+@layer base {
+  @font-face {
+    font-family: 'ClashDisplay-Extralight';
+    src: url('../fonts/ClashDisplay-Extralight.woff2') format('woff2'),
+        url('../fonts/ClashDisplay-Extralight.woff') format('woff'),
+        url('../fonts/ClashDisplay-Extralight.ttf') format('truetype');
+    font-weight: 200;
+    font-display: swap;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'ClashDisplay-Light';
+    src: url('../fonts/ClashDisplay-Light.woff2') format('woff2'),
+        url('../fonts/ClashDisplay-Light.woff') format('woff'),
+        url('../fonts/ClashDisplay-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-display: swap;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'ClashDisplay-Regular';
+    src: url('../fonts/ClashDisplay-Regular.woff2') format('woff2'),
+        url('../fonts/ClashDisplay-Regular.woff') format('woff'),
+        url('../fonts/ClashDisplay-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'ClashDisplay-Medium';
+    src: url('../fonts/ClashDisplay-Medium.woff2') format('woff2'),
+        url('../fonts/ClashDisplay-Medium.woff') format('woff'),
+        url('../fonts/ClashDisplay-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-display: swap;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'ClashDisplay-Semibold';
+    src: url('../fonts/ClashDisplay-Semibold.woff2') format('woff2'),
+        url('../fonts/ClashDisplay-Semibold.woff') format('woff'),
+        url('../fonts/ClashDisplay-Semibold.ttf') format('truetype');
+    font-weight: 600;
+    font-display: swap;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'ClashDisplay-Bold';
+    src: url('../fonts/ClashDisplay-Bold.woff2') format('woff2'),
+        url('../fonts/ClashDisplay-Bold.woff') format('woff'),
+        url('../fonts/ClashDisplay-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-display: swap;
+    font-style: normal;
+  }
+  /**
+  * This is a variable font
+  * You can control variable axes as shown below:
+  * font-variation-settings: wght 700.0;
+  *
+  * available axes:
+  'wght' (range from 200.0 to 700.0
+  */
+  @font-face {
+    font-family: 'ClashDisplay-Variable';
+    src: url('../fonts/ClashDisplay-Variable.woff2') format('woff2'),
+        url('../fonts/ClashDisplay-Variable.woff') format('woff'),
+        url('../fonts/ClashDisplay-Variable.ttf') format('truetype');
+    font-weight: 200 700;
+    font-display: swap;
+    font-style: normal;
+  }
+
+  /**
+* @license
+*
+* Font Family: General Sans
+* Designed by: Frode Helland
+* URL: https://www.fontshare.com/fonts/general-sans
+* © 2025 Indian Type Foundry
+*
+* General Sans Extralight 
+* General Sans ExtralightItalic 
+* General Sans Light 
+* General Sans LightItalic 
+* General Sans Regular 
+* General Sans Italic 
+* General Sans Medium 
+* General Sans MediumItalic 
+* General Sans Semibold 
+* General Sans SemiboldItalic 
+* General Sans Bold 
+* General Sans BoldItalic 
+* General Sans Variable (Variable font)
+* General Sans VariableItalic (Variable font)
+
+*
+*/
+  @font-face {
+    font-family: 'GeneralSans-Extralight';
+    src: url('../fonts/GeneralSans-Extralight.woff2') format('woff2'),
+        url('../fonts/GeneralSans-Extralight.woff') format('woff'),
+        url('../fonts/GeneralSans-Extralight.ttf') format('truetype');
+    font-weight: 200;
+    font-display: swap;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'GeneralSans-ExtralightItalic';
+    src: url('../fonts/GeneralSans-ExtralightItalic.woff2') format('woff2'),
+        url('../fonts/GeneralSans-ExtralightItalic.woff') format('woff'),
+        url('../fonts/GeneralSans-ExtralightItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-display: swap;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'GeneralSans-Light';
+    src: url('../fonts/GeneralSans-Light.woff2') format('woff2'),
+        url('../fonts/GeneralSans-Light.woff') format('woff'),
+        url('../fonts/GeneralSans-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-display: swap;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'GeneralSans-LightItalic';
+    src: url('../fonts/GeneralSans-LightItalic.woff2') format('woff2'),
+        url('../fonts/GeneralSans-LightItalic.woff') format('woff'),
+        url('../fonts/GeneralSans-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-display: swap;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'GeneralSans-Regular';
+    src: url('../fonts/GeneralSans-Regular.woff2') format('woff2'),
+        url('../fonts/GeneralSans-Regular.woff') format('woff'),
+        url('../fonts/GeneralSans-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'GeneralSans-Italic';
+    src: url('../fonts/GeneralSans-Italic.woff2') format('woff2'),
+        url('../fonts/GeneralSans-Italic.woff') format('woff'),
+        url('../fonts/GeneralSans-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-display: swap;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'GeneralSans-Medium';
+    src: url('../fonts/GeneralSans-Medium.woff2') format('woff2'),
+        url('../fonts/GeneralSans-Medium.woff') format('woff'),
+        url('../fonts/GeneralSans-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-display: swap;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'GeneralSans-MediumItalic';
+    src: url('../fonts/GeneralSans-MediumItalic.woff2') format('woff2'),
+        url('../fonts/GeneralSans-MediumItalic.woff') format('woff'),
+        url('../fonts/GeneralSans-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-display: swap;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'GeneralSans-Semibold';
+    src: url('../fonts/GeneralSans-Semibold.woff2') format('woff2'),
+        url('../fonts/GeneralSans-Semibold.woff') format('woff'),
+        url('../fonts/GeneralSans-Semibold.ttf') format('truetype');
+    font-weight: 600;
+    font-display: swap;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'GeneralSans-SemiboldItalic';
+    src: url('../fonts/GeneralSans-SemiboldItalic.woff2') format('woff2'),
+        url('../fonts/GeneralSans-SemiboldItalic.woff') format('woff'),
+        url('../fonts/GeneralSans-SemiboldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-display: swap;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'GeneralSans-Bold';
+    src: url('../fonts/GeneralSans-Bold.woff2') format('woff2'),
+        url('../fonts/GeneralSans-Bold.woff') format('woff'),
+        url('../fonts/GeneralSans-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-display: swap;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'GeneralSans-BoldItalic';
+    src: url('../fonts/GeneralSans-BoldItalic.woff2') format('woff2'),
+        url('../fonts/GeneralSans-BoldItalic.woff') format('woff'),
+        url('../fonts/GeneralSans-BoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-display: swap;
+    font-style: italic;
+  }
+  /**
+  * This is a variable font
+  * You can control variable axes as shown below:
+  * font-variation-settings: wght 700.0;
+  *
+  * available axes:
+  'wght' (range from 200.0 to 700.0
+  */
+  @font-face {
+    font-family: 'GeneralSans-Variable';
+    src: url('../fonts/GeneralSans-Variable.woff2') format('woff2'),
+        url('../fonts/GeneralSans-Variable.woff') format('woff'),
+        url('../fonts/GeneralSans-Variable.ttf') format('truetype');
+    font-weight: 200 700;
+    font-display: swap;
+    font-style: normal;
+  }
+  /**
+  * This is a variable font
+  * You can control variable axes as shown below:
+  * font-variation-settings: wght 700.0;
+  *
+  * available axes:
+  'wght' (range from 200.0 to 700.0
+  */
+  @font-face {
+    font-family: 'GeneralSans-VariableItalic';
+    src: url('../fonts/GeneralSans-VariableItalic.woff2') format('woff2'),
+        url('../fonts/GeneralSans-VariableItalic.woff') format('woff'),
+        url('../fonts/GeneralSans-VariableItalic.ttf') format('truetype');
+    font-weight: 200 700;
+    font-display: swap;
+    font-style: italic;
+  }
+
+
+}
+
+
