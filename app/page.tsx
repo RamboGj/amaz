@@ -81,7 +81,12 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="max-w-[445px] w-full animate-float  translate-3d perspective-[1000px]">
+
+          <video className="max-w-[1000px] w-full h-[1000px] bg-transparent absolute right-0 top-1/2 -translate-y-1/2" muted autoPlay playsInline loop>
+            <source src="/sample.webm" />
+            {/* <source src="/morflax-studio.mp4" /> */}
+          </video>
+          {/* <div className="max-w-[445px] w-full animate-float  translate-3d perspective-[1000px]">
             <div className="bg-[#D9D9D9] w-full h-[454px]">
 
             </div>
@@ -103,7 +108,7 @@ export default function HomePage() {
                   </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 
