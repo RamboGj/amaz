@@ -52,7 +52,7 @@ export const metadata: Metadata = {
 
 export default async function SignupPage() {
     return (
-        <div className="h-svh flex flex-col justify-center items-center w-full bg-[#131313] bg-[url('/Elements.png')] bg-no-repeat bg-cover px-6 lg:px-0">
+        <div className="h-screen flex flex-col justify-center items-center w-full bg-[#131313] bg-[url('/Elements.png')] bg-no-repeat bg-cover px-6 lg:px-0">
 		   <Image src={"/logo.svg"} alt="AMA Logo" width={64} height={64} />
             <h1 className="font-ClashDisplayBold text-white text-[3rem] block mt-8">Join AMA Platform</h1>
 
