@@ -79,7 +79,7 @@ export function Countdown({ releaseDate }: { releaseDate: string }) {
             <div className="mt-8 w-full h-3 bg-[#2E3A39] rounded-full overflow-hidden max-w-[400px]">
                 <div
                 className="h-full bg-brandGradient transition-all duration-500 ease-in-out"
-                style={{ width: `${progress * 10}%` }}
+                style={{ width: `${progress}%` }}
                 />
             </div>
         </div>

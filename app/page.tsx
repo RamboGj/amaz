@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Countdown } from "./_components/Countdown/Countdown";
+import { StepsSection } from "./_components/StepsSection/StepsSection";
 
 export default function HomePage() {
   const navLinks = [
@@ -25,14 +26,16 @@ export default function HomePage() {
     },
   ]
 
+
+
   return (
-    <div className="bg-[#131313] overflow-x-hidden">
-      <div className="w-screen h-screen bg-[url('/Elements.png')] bg-cover bg-center">
+    <div className="bg-[#131313]">
+      <section id="hero" className="bg-[url('/Elements.png')] bg-cover bg-center pb-[200px]">
         <header className="container mx-auto">
           <nav className="flex items-center justify-between">
             <Link href="/" className="flex items-center gap-x-4">
-              <Image width={64} height={64} src="/logo.svg" alt="Amaz Logo" />
-              <strong className="font-ClashDisplayMedium text-white text-3xl">Amaz</strong>
+              <Image width={64} height={64} src="/logo.svg" alt="AMA Logo" />
+              <strong className="font-ClashDisplayMedium text-white text-3xl">AMA</strong>
             </Link>
 
             <ul className="flex items-center gap-x-8">
@@ -64,12 +67,12 @@ export default function HomePage() {
         <div className="flex items-end mt-[90px] container mx-auto justify-between gap-x-24">
           <div className="max-w-[787px]">
             <h1 className="text-[6rem] leading-[120%] font-ClashDisplayMedium text-white">
-              Discover collect and sell your super NFTs
+            Blockchain for a Sustainable Future
             </h1>
             <p className="max-w-[550px] block mt-4 text-[1.125rem] leading-[160%] font-GeneralSansRegular text-white">
-              A platform for buyers and sellers to buy and sell limited edition original art with over 1000 artists is now available.
+            Discover how blockchain technology is driving the preservation of the Amazon Rainforest and empowering communities for a sustainable future. Join the movement for real impact.
             </p>
-
+     
             <Countdown releaseDate={new Date("04-27-2025").toISOString()} />
           </div>
 
@@ -109,9 +112,43 @@ export default function HomePage() {
             </div>
           </div> */}
         </div>
-      </div>
+      </section>
+   
+            <section className="py-[200px] relative overflow-hidden" id="second">
+              <div className="absolute right-0 bottom-0 w-[468px] h-[312px] rotate-[-25deg] blur-[256px] rounded-[468px] bg-[rgba(15,248,136,0.35)] z-0" />
+              <div className="absolute left-0 top-0 w-[468px] h-[312px] rotate-[-25deg] blur-[256px] rounded-[468px] bg-[rgba(15,248,136,0.35)] z-0" />
+            <div className="max-w-[1120px] mx-auto">
+            <h2 className="text-[5rem] leading-[120%] font-ClashDisplayMedium text-white">
+             Secure Your Tokens Early and Save
+            </h2>
+              <p className="max-w-[550px] block mt-4 text-[1.125rem] leading-[160%] font-GeneralSansRegular text-white">
+                Check out each ICO phase and lock in the best prices:
+              </p>
 
+
+              <ul className="w-full flex flex-col mt-12 z-20">
+                <li className="bg-[rgba(14,62,52,0.2)] w-full px-6 rounded-[12px] h-[104px] flex justify-between items-center gap-x-6">
+                  <strong className="text-[#FAFF00] font-ClashDisplayMedium text-[1.5rem]">1. Seed :</strong>
+                  <span className="text-[1.25rem] text-white font-GeneralSansMedium">R$X.XX / Token </span>
+                  <span className="text-[1.25rem] text-white font-GeneralSansMedium">Hard Cap: R$XXX,XXX</span>
+                </li>
+                <li className="-full px-6 rounded-[12px] h-[104px] flex justify-between items-center gap-x-6">
+                  <strong className="text-[#FAFF00] font-ClashDisplayMedium text-[1.5rem]">2. Private :</strong>
+                  <span className="text-[1.25rem] text-white font-GeneralSansMedium">R$X.XX / Token </span>
+                  <span className="text-[1.25rem] text-white font-GeneralSansMedium">Hard Cap: R$XXX,XXX</span>
+                </li>
+                <li className="bg-[rgba(14,62,52,0.2)] w-full px-6 rounded-[12px] h-[104px] flex justify-between items-center gap-x-6">
+                  <strong className="text-[#FAFF00] font-ClashDisplayMedium text-[1.5rem]">3. Public :</strong>
+                  <span className="text-[1.25rem] text-white font-GeneralSansMedium">R$X.XX / Token </span>
+                  <span className="text-[1.25rem] text-white font-GeneralSansMedium">Hard Cap: R$XXX,XXX</span>
+                </li>
+              </ul>
+            </div>
      
+            </section>
+
+
+           <StepsSection />
     </div>
   )
 }
