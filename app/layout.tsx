@@ -3,30 +3,30 @@ import "./globals.css";
 
 export const metadata: Metadata = {
 	// metadataBase: new URL("https://www.Amaz.com.br"),
-	title: "Amaz | ERC20 Token",
+	title: "AMA TOKEN | Blockchain for a Sustainable Future",
 	description:
-		"Stay ahead with Amaz",
+		"Discover how blockchain technology is driving the preservation of the Amazon Rainforest and empowering communities for a sustainable future. Join the movement for real impact!",
 	openGraph: {
 		type: "website",
 		// url: "https://www.Amaz.com.br",
-		siteName: "Amaz",
-		title: "Amaz | ERC20 Token",
+		siteName: "AMA",
+		title: "AMA TOKEN | Blockchain for a Sustainable Future",
 		description:
-			"Stay ahead with Amaz",
+			"Discover how blockchain technology is driving the preservation of the Amazon Rainforest and empowering communities for a sustainable future. Join the movement for real impact!",
 		images: [
 			{
 				url: "/og.png",
 				width: 1200,
 				height: 630,
-				alt: "Amaz ERC20 Token",
+				alt: "AMA TOKEN | Blockchain for a Sustainable Future",
 			},
 		],
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Amaz | ERC20 Token",
+		title: "AMA TOKEN | Blockchain for a Sustainable Future",
 		description:
-			"Stay ahead with Amaz",
+			"Discover how blockchain technology is driving the preservation of the Amazon Rainforest and empowering communities for a sustainable future. Join the movement for real impact!",
 		images: ["/og.png"],
 	},
 	icons: {
@@ -43,6 +43,7 @@ export const metadata: Metadata = {
 		"erc20",
 	],
 };
+
 export default function RootLayout({
   children,
 }: Readonly<{

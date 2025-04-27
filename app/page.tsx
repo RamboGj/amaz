@@ -1,5 +1,8 @@
+"use client"
+
 import Image from "next/image";
 import Link from "next/link";
+import { Countdown } from "./_components/Countdown/Countdown";
 
 export default function HomePage() {
   const navLinks = [
@@ -65,26 +68,20 @@ export default function HomePage() {
               A platform for buyers and sellers to buy and sell limited edition original art with over 1000 artists is now available.
             </p>
 
-            <div className="mt-14 flex gap-x-12 items-stretch">
-              <div className="flex flex-col gap-y-1">
-                <h3 className="font-ClashDisplayMedium text-[2rem] text-white">23</h3>
-                <span className="text-[1rem] font-GeneralSansRegular text-[#A9B6B3]">Days</span>
-              </div>
-              <div className="flex flex-col gap-y-1">
-                <h3 className="font-ClashDisplayMedium text-[2rem] text-white">17</h3>
-                <span className="text-[1rem] font-GeneralSansRegular text-[#A9B6B3]">Hours</span>
-              </div>
-              <div className="flex flex-col gap-y-1">
-                <h3 className="font-ClashDisplayMedium text-[2rem] text-white">35</h3>
-                <span className="text-[1rem] font-GeneralSansRegular text-[#A9B6B3]">Minutes</span>
-              </div>
-            </div>
+            <Countdown releaseDate={new Date("04-27-2025").toISOString()} />
           </div>
 
 
-          <video className="max-w-[1000px] w-full h-[1000px] bg-transparent absolute right-0 top-1/2 -translate-y-1/2" muted autoPlay playsInline loop>
-            <source src="/sample.webm" />
-            {/* <source src="/morflax-studio.mp4" /> */}
+          {/* <Canvas>
+            <ambientLight intensity={0.5} />
+            <directionalLight position={[5, 5, 5]} intensity={1} />
+            <PingPongModel />
+            <OrbitControls enableZoom={false} />
+          </Canvas> */}
+
+          <video className="max-w-[1000px] w-full h-[1000px] bg-transparent absolute right-0 top-1/2 -translate-y-1/2"  muted autoPlay playsInline loop>
+            <source src="/sampl2.webm" />
+             <source src="/morflax-studio.mp4" />
           </video>
           {/* <div className="max-w-[445px] w-full animate-float  translate-3d perspective-[1000px]">
             <div className="bg-[#D9D9D9] w-full h-[454px]">
