@@ -134,6 +134,7 @@ export function StepsSection() {
 							</div>
 
 							<Image
+								loading="lazy"
 								className="rounded-[24px] outline-2 outline-offset-[-2px] outline-white/20"
 								width={500}
 								height={500}
