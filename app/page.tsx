@@ -51,10 +51,12 @@ export default function HomePage() {
               <button className="text-base font-GeneralSansMedium text-white hover:cursor-pointer">
                 Buy
               </button>
+              <Link href={"/login"}>
               <button className="h-[100px] flex items-center px-8 text-[#131313] font-GeneralSansMedium text-base 
                     bg-brandGradient transition-all duration-500 hover:cursor-pointer">
-                    <span>Sign In</span>
+                    <span>Log In</span>
                   </button>
+                  </Link>
             </div>
           </nav>
         </header>
@@ -79,7 +81,7 @@ export default function HomePage() {
             <OrbitControls enableZoom={false} />
           </Canvas> */}
 
-          <video className="max-w-[1000px] w-full h-[1000px] bg-transparent absolute right-0 top-1/2 -translate-y-1/2"  muted autoPlay playsInline loop>
+          <video className="max-w-[1000px] w-full h-[1000px] bg-transparent absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none"  muted autoPlay playsInline loop>
             <source src="/sample.webm" />
              {/* <source src="/morflax-studio.mp4" /> */}
           </video>
