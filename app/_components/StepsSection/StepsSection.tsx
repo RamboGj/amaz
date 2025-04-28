@@ -33,14 +33,14 @@ export function StepsSection() {
 			title: "Pay Easily via PIX",
 			description:
 				"Once you're registered, simply use your PIX key to complete your token purchase instantly. Enjoy a seamless, fast, and secure payment process designed for Brazil.",
-			imageHref: "/signup.png",
+			imageHref: "/pix.png",
 		},
 		{
 			headline: "Step 3",
 			title: "Claim Your Tokens",
 			description:
 				"After your payment is confirmed, your tokens are ready! You can claim them directly to your personal blockchain wallet or keep them safely in your custodial balance until you're ready",
-			imageHref: "/signup.png",
+			imageHref: "/claim.png",
 		},
 	];
 
