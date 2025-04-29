@@ -3,8 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Countdown } from "./_components/Countdown/Countdown";
-import { StepsSection } from "./_components/StepsSection/StepsSection";
-import { Footer } from "./_components/Footer/Footer";
 
 export default function HomePage() {
 	const navLinks = [
