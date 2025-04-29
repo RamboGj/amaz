@@ -3,6 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Countdown } from "./_components/Countdown/Countdown";
+import { StepsSection } from "./_components/StepsSection/StepsSection";
+import { Footer } from "./_components/Footer/Footer";
 
 export default function HomePage() {
 	const navLinks = [
@@ -89,7 +91,7 @@ export default function HomePage() {
 					</div>
 
 					<video
-						className="hidden md:black max-w-[1000px] w-full h-[1000px] bg-transparent absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none"
+						className="hidden md:block max-w-[1000px] w-full h-[1000px] bg-transparent absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none"
 						muted
 						autoPlay
 						playsInline
@@ -149,9 +151,9 @@ export default function HomePage() {
 				</div>
 			</section>
 
-			{/* <StepsSection />
+			<StepsSection />
 
-			<Footer /> */}
+			<Footer />
 		</div>
 	);
 }
