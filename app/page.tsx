@@ -87,7 +87,7 @@ export default function HomePage() {
 							future. Join the movement for real impact.
 						</p>
 
-						<Countdown releaseDate={new Date("04-27-2025").toISOString()} />
+						<Countdown releaseDate={new Date("04-30-2025").toISOString()} />
 					</div>
 
 					{/* <Canvas>
