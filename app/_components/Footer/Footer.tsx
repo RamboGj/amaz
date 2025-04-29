@@ -62,7 +62,7 @@ export function Footer() {
 
 	return (
 		<footer
-			className="pb-9 pt-[160px] relative overflow-hidden border-t border-white/10 mt-[120px]"
+			className="hidden lg:block pb-9 pt-[160px] relative overflow-hidden border-t border-white/10 mt-[120px]"
 			id="footer"
 		>
 			<div className="max-w-[1120px] mx-auto w-full flex flex-col items-center">
