@@ -90,46 +90,18 @@ export default function HomePage() {
 						<Countdown releaseDate={new Date("04-30-2025").toISOString()} />
 					</div>
 
-					{/* <Canvas>
-            <ambientLight intensity={0.5} />
-            <directionalLight position={[5, 5, 5]} intensity={1} />
-            <PingPongModel />
-            <OrbitControls enableZoom={false} />
-          </Canvas> */}
+			
 
 					<video
-						className="max-w-[1000px] w-full h-[1000px] bg-transparent absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none"
+						className="hidden md:black max-w-[1000px] w-full h-[1000px] bg-transparent absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none"
 						muted
 						autoPlay
 						playsInline
 						loop
 					>
 						<source src="/sample.webm" />
-						{/* <source src="/morflax-studio.mp4" /> */}
 					</video>
-					{/* <div className="max-w-[445px] w-full animate-float  translate-3d perspective-[1000px]">
-            <div className="bg-[#D9D9D9] w-full h-[454px]">
-
-            </div>
-            <Image src={""} alt="" width={0} height={0} />
-            <div className="p-4 flex flex-col gap-y-4 bg-white/10 backdrop-blur-[46px]">
-              <div className="flex items-center justify-between">
-                  <strong className="text-white font-ClashDisplayMedium text-[1.5rem]">AMAZ Token</strong>
-                  <span className="py-2 px-4 border border-white rounded-[16px] text-bvase text-white font-GeneralSansRegular">Place a Bid</span>
-              </div>
-              <div className="flex justify-between items-stretch">
-                  <div className="flex flex-col gap-y-1.5">
-                    <span className="text-base text-white/50 font-GeneralSansRegular">Current Bid</span>
-                    <span className="font-GeneralSansMedium text-white leading-[160%] text-[1.125rem]">15.65 ETH</span>
-                  </div>
-
-                  <div className="flex flex-col gap-y-1.5">
-                    <span className="text-base text-white/50 font-GeneralSansRegular">Remaining Time</span>
-                    <span className="font-GeneralSansMedium text-white leading-[160%] text-[1.125rem]">08 : 35 : 44</span>
-                  </div>
-              </div>
-            </div>
-          </div> */}
+			
 				</div>
 			</section>
 
