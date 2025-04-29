@@ -151,9 +151,9 @@ export default function HomePage() {
 				</div>
 			</section>
 
-			<StepsSection />
+			{/* <StepsSection />
 
-			<Footer />
+			<Footer /> */}
 		</div>
 	);
 }
