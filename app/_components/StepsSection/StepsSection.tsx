@@ -71,7 +71,10 @@ export function StepsSection() {
 	}, []);
 
 	return (
-		<section className="div max-w-[1120px] mx-auto py-[200px]" id="HowItWorks">
+		<section
+			className="hidden lg:block max-w-[1120px] mx-auto py-[200px]"
+			id="HowItWorks"
+		>
 			<h2 className="text-[5rem] text-center leading-[120%] font-ClashDisplayMedium text-white">
 				How to Buy Your AMA Tokens
 			</h2>

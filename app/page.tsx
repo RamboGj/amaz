@@ -90,8 +90,6 @@ export default function HomePage() {
 						<Countdown releaseDate={new Date("04-30-2025").toISOString()} />
 					</div>
 
-			
-
 					<video
 						className="hidden md:black max-w-[1000px] w-full h-[1000px] bg-transparent absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none"
 						muted
@@ -101,7 +99,6 @@ export default function HomePage() {
 					>
 						<source src="/sample.webm" />
 					</video>
-			
 				</div>
 			</section>
 
