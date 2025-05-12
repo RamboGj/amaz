@@ -3,8 +3,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --color-green500: var(--green500);
-  --color-green400: var(--green400);
+	--color-green500: var(--green500);
+	--color-green400: var(--green400);
 
 	--color-neutral500: var(--neutral500);
 
@@ -25,7 +25,7 @@
 	--background-image-heroGradient: var(--heroGradient);
 	--background-image-skeletonGradient: var(--skeletonGradient);
 	--background-image-brandGradient: var(--brandGradient);
-  
+
 	--animate-skeleton: skeletonKeyframe 3s linear infinite;
 
 	--animate-float: float 5s ease-in-out infinite;
@@ -36,30 +36,28 @@
 		}
 	}
 
-  @keyframes float {
-    0% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-48px) rotateX(15deg) rotateY(-25deg);
-    }
-    100% {
-      transform: translateY(0px);
-    }
-  }
+	@keyframes float {
+		0% {
+			transform: translateY(0px);
+		}
+		50% {
+			transform: translateY(-48px) rotateX(15deg) rotateY(-25deg);
+		}
+		100% {
+			transform: translateY(0px);
+		}
+	}
 }
 
-
-
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {}
-}
+} */
 
 :root {
-  --green500: #67D269;
-  --green400: #7FEE64;
+	--green500: #67d269;
+	--green400: #7fee64;
 
-  --neutral500: #838383;
+	--neutral500: #838383;
 
 	--ClashExtralight: "ClashDisplay-Extralight", "sans-serif";
 	--ClashDisplayLight: "ClashDisplay-Light", "sans-serif";
@@ -68,17 +66,21 @@
 	--ClashDisplaySemibold: "ClashDisplay-Semibold", "sans-serif";
 	--ClashDisplayBold: "ClashDisplay-Bold", "sans-serif";
 
-  --GeneralSansExtralight: "GeneralSans-Extralight", "sans-serif";
+	--GeneralSansExtralight: "GeneralSans-Extralight", "sans-serif";
 	--ClashDisplayLight: "GeneralSans-Light", "sans-serif";
 	--GeneralSansRegular: "GeneralSans-Regular", "sans-serif";
 	--GeneralSansMedium: "GeneralSans-Medium", "sans-serif";
 	--GeneralSansSemibold: "GeneralSans-Semibold", "sans-serif";
 	--GeneralSansBold: "GeneralSans-Bold", "sans-serif";
 
+	--heroGradient: linear-gradient(
+		260deg,
+		rgba(127, 238, 100, 0.1) 0%,
+		rgba(127, 238, 100, 0.0) 48.19%,
+		rgba(127, 238, 100, 0.1) 100.24%
+	);
 
-  --heroGradient: linear-gradient(260deg, rgba(127, 238, 100, 0.10) 0%, rgba(127, 238, 100, 0.00) 48.19%, rgba(127, 238, 100, 0.10) 100.24%);
-
-  --brandGradient: linear-gradient(90deg, #FFE000 0%, #7DFF16 100%);
+	--brandGradient: linear-gradient(90deg, #ffe000 0%, #7dff16 100%);
 
 	--skeletonGradient: linear-gradient(
 		to right,
@@ -107,61 +109,61 @@
 *
 */
 @layer base {
-  @font-face {
-    font-family: 'ClashDisplay-Extralight';
-    src: url('../fonts/ClashDisplay-Extralight.woff2') format('woff2'),
-        url('../fonts/ClashDisplay-Extralight.woff') format('woff'),
-        url('../fonts/ClashDisplay-Extralight.ttf') format('truetype');
-    font-weight: 200;
-    font-display: swap;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: 'ClashDisplay-Light';
-    src: url('../fonts/ClashDisplay-Light.woff2') format('woff2'),
-        url('../fonts/ClashDisplay-Light.woff') format('woff'),
-        url('../fonts/ClashDisplay-Light.ttf') format('truetype');
-    font-weight: 300;
-    font-display: swap;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: 'ClashDisplay-Regular';
-    src: url('../fonts/ClashDisplay-Regular.woff2') format('woff2'),
-        url('../fonts/ClashDisplay-Regular.woff') format('woff'),
-        url('../fonts/ClashDisplay-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-display: swap;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: 'ClashDisplay-Medium';
-    src: url('../fonts/ClashDisplay-Medium.woff2') format('woff2'),
-        url('../fonts/ClashDisplay-Medium.woff') format('woff'),
-        url('../fonts/ClashDisplay-Medium.ttf') format('truetype');
-    font-weight: 500;
-    font-display: swap;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: 'ClashDisplay-Semibold';
-    src: url('../fonts/ClashDisplay-Semibold.woff2') format('woff2'),
-        url('../fonts/ClashDisplay-Semibold.woff') format('woff'),
-        url('../fonts/ClashDisplay-Semibold.ttf') format('truetype');
-    font-weight: 600;
-    font-display: swap;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: 'ClashDisplay-Bold';
-    src: url('../fonts/ClashDisplay-Bold.woff2') format('woff2'),
-        url('../fonts/ClashDisplay-Bold.woff') format('woff'),
-        url('../fonts/ClashDisplay-Bold.ttf') format('truetype');
-    font-weight: 700;
-    font-display: swap;
-    font-style: normal;
-  }
-  /**
+	@font-face {
+		font-family: "ClashDisplay-Extralight";
+		src: url("../fonts/ClashDisplay-Extralight.woff2") format("woff2"),
+			url("../fonts/ClashDisplay-Extralight.woff") format("woff"),
+			url("../fonts/ClashDisplay-Extralight.ttf") format("truetype");
+		font-weight: 200;
+		font-display: swap;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: "ClashDisplay-Light";
+		src: url("../fonts/ClashDisplay-Light.woff2") format("woff2"),
+			url("../fonts/ClashDisplay-Light.woff") format("woff"),
+			url("../fonts/ClashDisplay-Light.ttf") format("truetype");
+		font-weight: 300;
+		font-display: swap;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: "ClashDisplay-Regular";
+		src: url("../fonts/ClashDisplay-Regular.woff2") format("woff2"),
+			url("../fonts/ClashDisplay-Regular.woff") format("woff"),
+			url("../fonts/ClashDisplay-Regular.ttf") format("truetype");
+		font-weight: 400;
+		font-display: swap;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: "ClashDisplay-Medium";
+		src: url("../fonts/ClashDisplay-Medium.woff2") format("woff2"),
+			url("../fonts/ClashDisplay-Medium.woff") format("woff"),
+			url("../fonts/ClashDisplay-Medium.ttf") format("truetype");
+		font-weight: 500;
+		font-display: swap;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: "ClashDisplay-Semibold";
+		src: url("../fonts/ClashDisplay-Semibold.woff2") format("woff2"),
+			url("../fonts/ClashDisplay-Semibold.woff") format("woff"),
+			url("../fonts/ClashDisplay-Semibold.ttf") format("truetype");
+		font-weight: 600;
+		font-display: swap;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: "ClashDisplay-Bold";
+		src: url("../fonts/ClashDisplay-Bold.woff2") format("woff2"),
+			url("../fonts/ClashDisplay-Bold.woff") format("woff"),
+			url("../fonts/ClashDisplay-Bold.ttf") format("truetype");
+		font-weight: 700;
+		font-display: swap;
+		font-style: normal;
+	}
+	/**
   * This is a variable font
   * You can control variable axes as shown below:
   * font-variation-settings: wght 700.0;
@@ -169,17 +171,17 @@
   * available axes:
   'wght' (range from 200.0 to 700.0
   */
-  @font-face {
-    font-family: 'ClashDisplay-Variable';
-    src: url('../fonts/ClashDisplay-Variable.woff2') format('woff2'),
-        url('../fonts/ClashDisplay-Variable.woff') format('woff'),
-        url('../fonts/ClashDisplay-Variable.ttf') format('truetype');
-    font-weight: 200 700;
-    font-display: swap;
-    font-style: normal;
-  }
+	@font-face {
+		font-family: "ClashDisplay-Variable";
+		src: url("../fonts/ClashDisplay-Variable.woff2") format("woff2"),
+			url("../fonts/ClashDisplay-Variable.woff") format("woff"),
+			url("../fonts/ClashDisplay-Variable.ttf") format("truetype");
+		font-weight: 200 700;
+		font-display: swap;
+		font-style: normal;
+	}
 
-  /**
+	/**
 * @license
 *
 * Font Family: General Sans
@@ -204,115 +206,115 @@
 
 *
 */
-  @font-face {
-    font-family: 'GeneralSans-Extralight';
-    src: url('../fonts/GeneralSans-Extralight.woff2') format('woff2'),
-        url('../fonts/GeneralSans-Extralight.woff') format('woff'),
-        url('../fonts/GeneralSans-Extralight.ttf') format('truetype');
-    font-weight: 200;
-    font-display: swap;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: 'GeneralSans-ExtralightItalic';
-    src: url('../fonts/GeneralSans-ExtralightItalic.woff2') format('woff2'),
-        url('../fonts/GeneralSans-ExtralightItalic.woff') format('woff'),
-        url('../fonts/GeneralSans-ExtralightItalic.ttf') format('truetype');
-    font-weight: 200;
-    font-display: swap;
-    font-style: italic;
-  }
-  @font-face {
-    font-family: 'GeneralSans-Light';
-    src: url('../fonts/GeneralSans-Light.woff2') format('woff2'),
-        url('../fonts/GeneralSans-Light.woff') format('woff'),
-        url('../fonts/GeneralSans-Light.ttf') format('truetype');
-    font-weight: 300;
-    font-display: swap;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: 'GeneralSans-LightItalic';
-    src: url('../fonts/GeneralSans-LightItalic.woff2') format('woff2'),
-        url('../fonts/GeneralSans-LightItalic.woff') format('woff'),
-        url('../fonts/GeneralSans-LightItalic.ttf') format('truetype');
-    font-weight: 300;
-    font-display: swap;
-    font-style: italic;
-  }
-  @font-face {
-    font-family: 'GeneralSans-Regular';
-    src: url('../fonts/GeneralSans-Regular.woff2') format('woff2'),
-        url('../fonts/GeneralSans-Regular.woff') format('woff'),
-        url('../fonts/GeneralSans-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-display: swap;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: 'GeneralSans-Italic';
-    src: url('../fonts/GeneralSans-Italic.woff2') format('woff2'),
-        url('../fonts/GeneralSans-Italic.woff') format('woff'),
-        url('../fonts/GeneralSans-Italic.ttf') format('truetype');
-    font-weight: 400;
-    font-display: swap;
-    font-style: italic;
-  }
-  @font-face {
-    font-family: 'GeneralSans-Medium';
-    src: url('../fonts/GeneralSans-Medium.woff2') format('woff2'),
-        url('../fonts/GeneralSans-Medium.woff') format('woff'),
-        url('../fonts/GeneralSans-Medium.ttf') format('truetype');
-    font-weight: 500;
-    font-display: swap;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: 'GeneralSans-MediumItalic';
-    src: url('../fonts/GeneralSans-MediumItalic.woff2') format('woff2'),
-        url('../fonts/GeneralSans-MediumItalic.woff') format('woff'),
-        url('../fonts/GeneralSans-MediumItalic.ttf') format('truetype');
-    font-weight: 500;
-    font-display: swap;
-    font-style: italic;
-  }
-  @font-face {
-    font-family: 'GeneralSans-Semibold';
-    src: url('../fonts/GeneralSans-Semibold.woff2') format('woff2'),
-        url('../fonts/GeneralSans-Semibold.woff') format('woff'),
-        url('../fonts/GeneralSans-Semibold.ttf') format('truetype');
-    font-weight: 600;
-    font-display: swap;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: 'GeneralSans-SemiboldItalic';
-    src: url('../fonts/GeneralSans-SemiboldItalic.woff2') format('woff2'),
-        url('../fonts/GeneralSans-SemiboldItalic.woff') format('woff'),
-        url('../fonts/GeneralSans-SemiboldItalic.ttf') format('truetype');
-    font-weight: 600;
-    font-display: swap;
-    font-style: italic;
-  }
-  @font-face {
-    font-family: 'GeneralSans-Bold';
-    src: url('../fonts/GeneralSans-Bold.woff2') format('woff2'),
-        url('../fonts/GeneralSans-Bold.woff') format('woff'),
-        url('../fonts/GeneralSans-Bold.ttf') format('truetype');
-    font-weight: 700;
-    font-display: swap;
-    font-style: normal;
-  }
-  @font-face {
-    font-family: 'GeneralSans-BoldItalic';
-    src: url('../fonts/GeneralSans-BoldItalic.woff2') format('woff2'),
-        url('../fonts/GeneralSans-BoldItalic.woff') format('woff'),
-        url('../fonts/GeneralSans-BoldItalic.ttf') format('truetype');
-    font-weight: 700;
-    font-display: swap;
-    font-style: italic;
-  }
-  /**
+	@font-face {
+		font-family: "GeneralSans-Extralight";
+		src: url("../fonts/GeneralSans-Extralight.woff2") format("woff2"),
+			url("../fonts/GeneralSans-Extralight.woff") format("woff"),
+			url("../fonts/GeneralSans-Extralight.ttf") format("truetype");
+		font-weight: 200;
+		font-display: swap;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: "GeneralSans-ExtralightItalic";
+		src: url("../fonts/GeneralSans-ExtralightItalic.woff2") format("woff2"),
+			url("../fonts/GeneralSans-ExtralightItalic.woff") format("woff"),
+			url("../fonts/GeneralSans-ExtralightItalic.ttf") format("truetype");
+		font-weight: 200;
+		font-display: swap;
+		font-style: italic;
+	}
+	@font-face {
+		font-family: "GeneralSans-Light";
+		src: url("../fonts/GeneralSans-Light.woff2") format("woff2"),
+			url("../fonts/GeneralSans-Light.woff") format("woff"),
+			url("../fonts/GeneralSans-Light.ttf") format("truetype");
+		font-weight: 300;
+		font-display: swap;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: "GeneralSans-LightItalic";
+		src: url("../fonts/GeneralSans-LightItalic.woff2") format("woff2"),
+			url("../fonts/GeneralSans-LightItalic.woff") format("woff"),
+			url("../fonts/GeneralSans-LightItalic.ttf") format("truetype");
+		font-weight: 300;
+		font-display: swap;
+		font-style: italic;
+	}
+	@font-face {
+		font-family: "GeneralSans-Regular";
+		src: url("../fonts/GeneralSans-Regular.woff2") format("woff2"),
+			url("../fonts/GeneralSans-Regular.woff") format("woff"),
+			url("../fonts/GeneralSans-Regular.ttf") format("truetype");
+		font-weight: 400;
+		font-display: swap;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: "GeneralSans-Italic";
+		src: url("../fonts/GeneralSans-Italic.woff2") format("woff2"),
+			url("../fonts/GeneralSans-Italic.woff") format("woff"),
+			url("../fonts/GeneralSans-Italic.ttf") format("truetype");
+		font-weight: 400;
+		font-display: swap;
+		font-style: italic;
+	}
+	@font-face {
+		font-family: "GeneralSans-Medium";
+		src: url("../fonts/GeneralSans-Medium.woff2") format("woff2"),
+			url("../fonts/GeneralSans-Medium.woff") format("woff"),
+			url("../fonts/GeneralSans-Medium.ttf") format("truetype");
+		font-weight: 500;
+		font-display: swap;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: "GeneralSans-MediumItalic";
+		src: url("../fonts/GeneralSans-MediumItalic.woff2") format("woff2"),
+			url("../fonts/GeneralSans-MediumItalic.woff") format("woff"),
+			url("../fonts/GeneralSans-MediumItalic.ttf") format("truetype");
+		font-weight: 500;
+		font-display: swap;
+		font-style: italic;
+	}
+	@font-face {
+		font-family: "GeneralSans-Semibold";
+		src: url("../fonts/GeneralSans-Semibold.woff2") format("woff2"),
+			url("../fonts/GeneralSans-Semibold.woff") format("woff"),
+			url("../fonts/GeneralSans-Semibold.ttf") format("truetype");
+		font-weight: 600;
+		font-display: swap;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: "GeneralSans-SemiboldItalic";
+		src: url("../fonts/GeneralSans-SemiboldItalic.woff2") format("woff2"),
+			url("../fonts/GeneralSans-SemiboldItalic.woff") format("woff"),
+			url("../fonts/GeneralSans-SemiboldItalic.ttf") format("truetype");
+		font-weight: 600;
+		font-display: swap;
+		font-style: italic;
+	}
+	@font-face {
+		font-family: "GeneralSans-Bold";
+		src: url("../fonts/GeneralSans-Bold.woff2") format("woff2"),
+			url("../fonts/GeneralSans-Bold.woff") format("woff"),
+			url("../fonts/GeneralSans-Bold.ttf") format("truetype");
+		font-weight: 700;
+		font-display: swap;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: "GeneralSans-BoldItalic";
+		src: url("../fonts/GeneralSans-BoldItalic.woff2") format("woff2"),
+			url("../fonts/GeneralSans-BoldItalic.woff") format("woff"),
+			url("../fonts/GeneralSans-BoldItalic.ttf") format("truetype");
+		font-weight: 700;
+		font-display: swap;
+		font-style: italic;
+	}
+	/**
   * This is a variable font
   * You can control variable axes as shown below:
   * font-variation-settings: wght 700.0;
@@ -320,16 +322,16 @@
   * available axes:
   'wght' (range from 200.0 to 700.0
   */
-  @font-face {
-    font-family: 'GeneralSans-Variable';
-    src: url('../fonts/GeneralSans-Variable.woff2') format('woff2'),
-        url('../fonts/GeneralSans-Variable.woff') format('woff'),
-        url('../fonts/GeneralSans-Variable.ttf') format('truetype');
-    font-weight: 200 700;
-    font-display: swap;
-    font-style: normal;
-  }
-  /**
+	@font-face {
+		font-family: "GeneralSans-Variable";
+		src: url("../fonts/GeneralSans-Variable.woff2") format("woff2"),
+			url("../fonts/GeneralSans-Variable.woff") format("woff"),
+			url("../fonts/GeneralSans-Variable.ttf") format("truetype");
+		font-weight: 200 700;
+		font-display: swap;
+		font-style: normal;
+	}
+	/**
   * This is a variable font
   * You can control variable axes as shown below:
   * font-variation-settings: wght 700.0;
@@ -337,15 +339,13 @@
   * available axes:
   'wght' (range from 200.0 to 700.0
   */
-  @font-face {
-    font-family: 'GeneralSans-VariableItalic';
-    src: url('../fonts/GeneralSans-VariableItalic.woff2') format('woff2'),
-        url('../fonts/GeneralSans-VariableItalic.woff') format('woff'),
-        url('../fonts/GeneralSans-VariableItalic.ttf') format('truetype');
-    font-weight: 200 700;
-    font-display: swap;
-    font-style: italic;
-  }
+	@font-face {
+		font-family: "GeneralSans-VariableItalic";
+		src: url("../fonts/GeneralSans-VariableItalic.woff2") format("woff2"),
+			url("../fonts/GeneralSans-VariableItalic.woff") format("woff"),
+			url("../fonts/GeneralSans-VariableItalic.ttf") format("truetype");
+		font-weight: 200 700;
+		font-display: swap;
+		font-style: italic;
+	}
 }
-
-

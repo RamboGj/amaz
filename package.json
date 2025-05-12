@@ -13,10 +13,12 @@
     "@react-three/fiber": "^9.1.2",
     "date-fns": "^4.1.0",
     "framer-motion": "^12.9.2",
+    "magic-sdk": "^29.0.6",
     "next": "15.3.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "three": "^0.176.0"
+    "three": "^0.176.0",
+    "zod": "^3.24.4"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
