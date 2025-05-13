@@ -2,8 +2,32 @@
 
 import { magic } from "@/app/utils/magic";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { toast } from "sonner";
+
+import { setCookie } from "cookies-next";
 
 export function LoginForm() {
+	const { push } = useRouter();
+
+	async function handleLogin() {
+		const result = await magic?.wallet.connectWithUI();
+
+		if (result?.length) {
+			const token = await magic?.user.generateIdToken({
+				attachment: result[0],
+			});
+
+			if (token) {
+				setCookie("token", token);
+
+				push("/dashboard");
+			} else {
+				toast.error("Something went wrong...");
+			}
+		}
+	}
+
 	return (
 		<div className="h-screen flex flex-col justify-center items-center w-full bg-[#131313] bg-[url('/Elements.png')] bg-no-repeat bg-cover px-6 lg:px-0">
 			<Image src={"/logo.svg"} alt="AMA Logo" width={64} height={64} />
@@ -12,7 +36,7 @@ export function LoginForm() {
 			</h1>
 
 			<button
-				onClick={() => magic?.wallet.connectWithUI()}
+				onClick={handleLogin}
 				type="button"
 				className="h-[56px] w-[360px] block mt-8 bg-green500 rounded-[12px] outline outline-offset-[-1px] outline-white/20 hover:cursor-pointer hover:bg-green400 transiton duration-500"
 			>

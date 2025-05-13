@@ -141,7 +141,7 @@ function SidebarProvider({
 						} as React.CSSProperties
 					}
 					className={cn(
-						"group/sidebar-wrapper bg-zinc-900 border-r border-white/10 flex min-h-svh w-[300px]",
+						" bg-zinc-900/50 backdrop-blur-2xl  border-r border-white/10 flex min-h-svh w-[300px]",
 						className,
 					)}
 					{...props}
@@ -243,7 +243,7 @@ function Sidebar({
 				<div
 					data-sidebar="sidebar"
 					data-slot="sidebar-inner"
-					className="bg-zinc-900 flex h-full w-full flex-col group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border group-data-[variant=floating]:shadow-sm"
+					className="bg-transparent backdrop-blur-2xl flex h-full w-full flex-col group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border group-data-[variant=floating]:shadow-sm"
 				>
 					{children}
 				</div>

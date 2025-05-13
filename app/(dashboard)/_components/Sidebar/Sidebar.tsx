@@ -2,7 +2,6 @@
 
 import { LayoutDashboard, Wallet } from "lucide-react";
 import { usePathname } from "next/navigation";
-import Link from "next/link";
 
 import {
 	Sidebar,
@@ -16,6 +15,7 @@ import {
 	SidebarTrigger,
 } from "@/components/ui/sidebar";
 import Image from "next/image";
+import { magic } from "@/app/utils/magic";
 
 export function AppSidebar() {
 	const pathname = usePathname();
@@ -25,17 +25,21 @@ export function AppSidebar() {
 			title: "Overview",
 			icon: LayoutDashboard,
 			href: "/dashboard",
+			action: () => {},
 		},
 		{
 			title: "Wallet",
 			icon: Wallet,
-			href: "/dashboard/wallet",
+			href: "/wallet",
+			action: () => {
+				magic?.wallet.showUI();
+			},
 		},
 	];
 
 	return (
-		<SidebarProvider>
-			<Sidebar className="border-r border-[#2a2a2a] bg-[#131313]">
+		<SidebarProvider className=" hidden lg:block">
+			<Sidebar className="border-r border-[#2a2a2a] bg-transparent backdrop-blur-3xl">
 				<SidebarHeader className="border-b border-[#2a2a2a] py-4">
 					<div className="flex items-center px-4">
 						<Image width={48} height={48} src="/logo.svg" alt="AMA Logo" />
@@ -55,16 +59,26 @@ export function AppSidebar() {
 										isActive={isActive}
 										className={
 											isActive
-												? " text-zinc-900  hover:text-[#67d269] bg-zinc-700"
+												? " text-zinc-900  hover:text-[#67d269]"
 												: "text-zinc-200 hover:bg-zinc-800 bg-transparent"
 										}
 									>
-										<Link href={item.href} className="flex items-center gap-2">
+										<button
+											onClick={item.action}
+											type="button"
+											className="flex items-center gap-2"
+										>
 											<item.icon className={isActive ? "text-[#67d269]" : ""} />
 											<span className={isActive ? "text-zinc-300" : ""}>
 												{item.title}
 											</span>
-										</Link>
+										</button>
+										{/* <Link href={item.href} className="flex items-center gap-2">
+											<item.icon className={isActive ? "text-[#67d269]" : ""} />
+											<span className={isActive ? "text-zinc-300" : ""}>
+												{item.title}
+											</span>
+										</Link> */}
 									</SidebarMenuButton>
 								</SidebarMenuItem>
 							);

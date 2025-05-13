@@ -6,7 +6,7 @@ export default function AppLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<div className="flex">
+		<div className="flex bg-[url('/Elements.png')] bg-cover bg-center">
 			<AppSidebar />
 			{children}
 		</div>

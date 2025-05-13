@@ -42,6 +42,7 @@ import {
 	TableRow,
 } from "@/components/ui/table";
 import { toast } from "sonner";
+import { magic } from "@/app/utils/magic";
 
 // Mock token data - replace with your actual token details
 const TOKEN_DETAILS = {
@@ -82,12 +83,21 @@ const MOCK_TRANSACTIONS = [
 ];
 
 export default function Dashboard() {
-	const [isConnected, setIsConnected] = useState(false);
+	const [isConnected, setIsConnected] = useState(true);
 	const [account, setAccount] = useState("");
 	const [balance, setBalance] = useState("0");
 	const [isLoading, setIsLoading] = useState(true);
 	const [transactions] = useState(MOCK_TRANSACTIONS);
 	const [isSwitchWalletOpen, setIsSwitchWalletOpen] = useState(false);
+
+	async function fetch() {
+		console.log("magic", await magic?.user.getInfo());
+	}
+
+	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
+	useEffect(() => {
+		fetch();
+	}, []);
 
 	useEffect(() => {
 		const initWallet = async () => {
@@ -212,7 +222,9 @@ export default function Dashboard() {
 		return (
 			<div className="container mx-auto py-10 space-y-8">
 				<div className="flex justify-between items-center">
-					<h1 className="text-3xl font-bold">Dashboard</h1>
+					<h1 className="text-3xl text-zinc200 font-ClashDisplayBold">
+						Dashboard
+					</h1>
 					<Skeleton className="h-10 w-40" />
 				</div>
 				<div className="grid gap-6 md:grid-cols-2">
@@ -250,12 +262,14 @@ export default function Dashboard() {
 	}
 
 	return (
-		<div className="container mx-auto py-10 space-y-8 font-GeneralSansRegular">
-			<div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-				<h1 className="text-3xl font-bold">Token Dashboard</h1>
+		<div className="lg:container lg:mx-auto w-full py-10 space-y-8 font-GeneralSansRegular px-6">
+			<div className="flex flex-col lg:flex-row justify-between items-start sm:items-center gap-4">
+				<h1 className="text-3xl font-ClashDisplayBold text-zinc-200">
+					Token Dashboard
+				</h1>
 				<div className="flex items-center gap-2">
 					<Button
-						className="text-green500 hover:cursor-pointer  bg-zinc-900 hover:bg-zinc-800 border border-green500 hover:text-green500"
+						className="text-green500 hover:cursor-pointer  border border-green500 hover:text-green500 bg-zinc-900/50 backdrop-blur-2xl"
 						variant="outline"
 						size="sm"
 						onClick={refreshData}
@@ -348,7 +362,7 @@ export default function Dashboard() {
 			</div>
 
 			<div className="grid gap-6 md:grid-cols-2">
-				<Card>
+				<Card className="bg-zinc-900/50 backdrop-blur-2xl">
 					<CardHeader>
 						<CardTitle>Wallet Information</CardTitle>
 						<CardDescription>
@@ -365,7 +379,7 @@ export default function Dashboard() {
 									{formatAddress(account)}
 								</code>
 								<Button
-									className="hover:cursor-pointer text-[#131313] bg-zinc-900 hover:bg-zinc-800 border border-green500"
+									className="hover:cursor-pointer text-[#131313] hover:bg-zinc-800 border border-green500"
 									variant="ghost"
 									size="icon"
 									onClick={() => copyToClipboard(account)}
@@ -374,7 +388,7 @@ export default function Dashboard() {
 									<span className="sr-only">Copy address</span>
 								</Button>
 								<Button
-									className="hover:cursor-pointer text-[#131313] bg-zinc-900 hover:bg-zinc-800 border border-green500"
+									className="hover:cursor-pointer text-[#131313] hover:bg-zinc-800 border border-green500"
 									variant="ghost"
 									size="icon"
 									onClick={() =>
@@ -401,7 +415,7 @@ export default function Dashboard() {
 					</CardContent>
 				</Card>
 
-				<Card>
+				<Card className="bg-zinc-900/50 backdrop-blur-2xl">
 					<CardHeader>
 						<CardTitle>Token Sale</CardTitle>
 						<CardDescription>
@@ -411,7 +425,7 @@ export default function Dashboard() {
 					<CardContent>
 						<div className="flex items-center justify-center p-4">
 							<Image
-								src="/placeholder.svg?height=120&width=240"
+								src="/logo.svg"
 								alt="Token Sale"
 								width={240}
 								height={120}
@@ -438,7 +452,7 @@ export default function Dashboard() {
 				</Card>
 			</div>
 
-			<Card>
+			<Card className="bg-zinc-900/50 backdrop-blur-2xl">
 				<CardHeader>
 					<CardTitle>Transaction History</CardTitle>
 					<CardDescription>
