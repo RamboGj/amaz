@@ -83,7 +83,7 @@ const MOCK_TRANSACTIONS = [
 ];
 
 export default function Dashboard() {
-	const [isConnected, setIsConnected] = useState(true);
+	const [isConnected, setIsConnected] = useState(false);
 	const [account, setAccount] = useState("");
 	const [balance, setBalance] = useState("0");
 	const [isLoading, setIsLoading] = useState(true);
