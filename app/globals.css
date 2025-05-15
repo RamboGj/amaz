@@ -117,7 +117,7 @@
 
 	--radius-lg: var(--radius);
 
-	--radius-xl: calc(var(--radius) + 4px)
+	--radius-xl: calc(var(--radius) + 4px);
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -156,7 +156,7 @@
 	--skeletonGradient: linear-gradient(
 		to right,
 		transparent 0%,
-		var(--neutral500) 50%,
+		rgba(255, 255, 255, 0.05) 50%,
 		transparent 100%
 	);
 
@@ -520,10 +520,10 @@
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
+	* {
+		@apply border-border outline-ring/50;
 	}
-  body {
-    @apply bg-background text-foreground;
+	body {
+		@apply bg-background text-foreground;
 	}
 }

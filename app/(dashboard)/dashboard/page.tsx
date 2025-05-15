@@ -32,7 +32,6 @@ import {
 	DialogTrigger,
 } from "@/components/ui/dialog";
 import { Separator } from "@/components/ui/separator";
-import { Skeleton } from "@/components/ui/skeleton";
 import {
 	Table,
 	TableBody,
@@ -43,6 +42,7 @@ import {
 } from "@/components/ui/table";
 import { toast } from "sonner";
 import { magic } from "@/app/utils/magic";
+import { Skeleton } from "@/components/Skeleton/Skeleton";
 
 // Mock token data - replace with your actual token details
 const TOKEN_DETAILS = {
@@ -90,15 +90,6 @@ export default function Dashboard() {
 	const [transactions] = useState(MOCK_TRANSACTIONS);
 	const [isSwitchWalletOpen, setIsSwitchWalletOpen] = useState(false);
 
-	async function fetch() {
-		console.log("magic", await magic?.user.getInfo());
-	}
-
-	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
-	useEffect(() => {
-		fetch();
-	}, []);
-
 	useEffect(() => {
 		const initWallet = async () => {
 			try {
@@ -111,17 +102,13 @@ export default function Dashboard() {
 					return;
 				}
 
-				const accounts = await ethereum.request({ method: "eth_accounts" });
+				const result = await magic?.user.getInfo();
 
-				if (accounts.length !== 0) {
-					const account = accounts[0];
-					console.log("Found an authorized account:", account);
-					setAccount(account);
-					setIsConnected(true);
-					// fetchTokenBalance("");
-				} else {
-					console.log("No authorized account found");
-				}
+				if (!result) return setIsConnected(false);
+
+				const account = result.publicAddress || "";
+				setAccount(account);
+				setIsConnected(true);
 			} catch (error) {
 				console.error("Error checking wallet connection:", error);
 			} finally {
@@ -135,27 +122,13 @@ export default function Dashboard() {
 	const connectWallet = async () => {
 		try {
 			setIsLoading(true);
-			// biome-ignore lint/suspicious/noExplicitAny: <explanation>
-			const { ethereum } = window as any;
 
-			if (!ethereum) {
-				toast(
-					"Wallet not found. Please install MetaMask or another Ethereum wallet",
-				);
-				setIsLoading(false);
-				return;
-			}
+			const result = await magic?.wallet.connectWithUI();
 
-			const accounts = await ethereum.request({
-				method: "eth_requestAccounts",
-			});
-			console.log("Connected account:", accounts[0]);
-
-			setAccount(accounts[0]);
 			setIsConnected(true);
-			// fetchTokenBalance(accounts[0]);
-		} catch (error) {
-			console.error("Error connecting wallet:", error);
+			setAccount(result?.[0] || "");
+		} catch {
+			toast.error("Something went wrong...");
 		} finally {
 			setIsLoading(false);
 		}
@@ -222,14 +195,14 @@ export default function Dashboard() {
 		return (
 			<div className="container mx-auto py-10 space-y-8">
 				<div className="flex justify-between items-center">
-					<h1 className="text-3xl text-zinc200 font-ClashDisplayBold">
-						Dashboard
+					<h1 className="text-3xl text-zinc-200 font-ClashDisplayBold">
+						Token Dashboard
 					</h1>
 					<Skeleton className="h-10 w-40" />
 				</div>
 				<div className="grid gap-6 md:grid-cols-2">
-					<Skeleton className="h-[200px] w-full" />
-					<Skeleton className="h-[200px] w-full" />
+					<Skeleton className="h-[360px] w-full" />
+					<Skeleton className="h-[360px] w-full" />
 				</div>
 				<Skeleton className="h-[400px] w-full" />
 			</div>
@@ -268,6 +241,17 @@ export default function Dashboard() {
 					Token Dashboard
 				</h1>
 				<div className="flex items-center gap-2">
+					<Button
+						className="hover:cursor-pointer border text-zinc-400 hover:text-zinc-400 border-white/10 hover:bg-zinc-900/50 bg-zinc-900/50 backdrop-blur-2xl"
+						variant="outline"
+						size="sm"
+						onClick={async () => {
+							await magic?.user.logout();
+							setIsConnected(false);
+						}}
+					>
+						Logout
+					</Button>
 					<Button
 						className="text-green500 hover:cursor-pointer  border border-green500 hover:text-green500 bg-zinc-900/50 backdrop-blur-2xl"
 						variant="outline"
