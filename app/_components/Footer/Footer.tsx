@@ -62,7 +62,7 @@ export function Footer() {
 
 	return (
 		<footer
-			className="hidden lg:block pb-9 pt-[160px] relative overflow-hidden border-t border-white/10 mt-[120px]"
+			className="block px-6 lg:px-0 pb-9 pt-20 lg:pt-[160px] relative overflow-hidden border-t border-white/10 mt-12 lg:mt-[120px]"
 			id="footer"
 		>
 			<div className="max-w-[1120px] mx-auto w-full flex flex-col items-center">
@@ -71,7 +71,7 @@ export function Footer() {
 					className="absolute pointer-events-none select-none -bottom-[234px] w-[468px] h-[312px] rotate-[-25deg] blur-[256px] rounded-[468px] bg-[rgba(15,248,136,0.35)] z-0"
 				/>
 
-				<div className=" w-full flex items-start justify-between z-10">
+				<div className=" w-full flex-col lg:flex-row flex items-start justify-between z-10">
 					<div className="flex flex-col gap-y-8">
 						<Image
 							src="/logo.svg"
@@ -93,7 +93,7 @@ export function Footer() {
 						</div>
 					</div>
 
-					<div className="flex items-start gap-x-20">
+					<div className="flex flex-col mt-8 lg:mt-0 lg:flex-row items-start gap-8 lg:gap-20">
 						{links.map(({ items, title }) => {
 							return (
 								<div className="flex flex-col gap-y-4" key={title}>

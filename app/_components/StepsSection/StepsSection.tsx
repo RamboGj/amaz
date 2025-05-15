@@ -72,18 +72,18 @@ export function StepsSection() {
 
 	return (
 		<section
-			className="hidden lg:block max-w-[1120px] mx-auto py-[200px]"
+			className="block max-w-[1120px] mx-auto py-20 lg:py-[200px] px-6 xl:px-0"
 			id="HowItWorks"
 		>
-			<h2 className="text-[5rem] text-center leading-[120%] font-ClashDisplayMedium text-white">
+			<h2 className="text-[3rem] lg:text-[5rem] text-center leading-[120%] font-ClashDisplayMedium text-white">
 				How to Buy Your AMA Tokens
 			</h2>
 
 			<div
 				ref={observerRef}
-				className="flex flex-col relative gap-y-[400px] mt-20"
+				className="flex flex-col relative gap-y-32 lg:gap-y-[400px] mt-20"
 			>
-				<div className="w-3 bg-white/10 absolute top-12 bottom-12 left-1/2 -translate-x-1/2">
+				<div className="w-3  hidden lg:block  bg-white/10 absolute top-12 bottom-12 left-1/2 -translate-x-1/2">
 					<div
 						style={{
 							transform: `scaleY(${progress})`,
@@ -138,7 +138,7 @@ export function StepsSection() {
 
 							<Image
 								loading="lazy"
-								className="rounded-[24px] outline-2 outline-offset-[-2px] outline-white/20"
+								className="hidden lg:block w-[320px] h-[320px] xl:w-[500px] xl:h-[500px] rounded-[24px] outline-2 outline-offset-[-2px] outline-white/20"
 								width={500}
 								height={500}
 								src={imageHref}

@@ -31,7 +31,7 @@ export default function HomePage() {
 		<div className="bg-[#131313]">
 			<section
 				id="hero"
-				className="bg-[url('/Elements.png')] bg-cover bg-center pb-[200px]"
+				className="bg-[url('/Elements.png')] bg-cover bg-center pb-20 lg:pb-[200px] pl-6 lg:px-0"
 			>
 				<header className="container mx-auto">
 					<nav className="flex items-center justify-between">
@@ -42,7 +42,7 @@ export default function HomePage() {
 							</strong>
 						</Link>
 
-						<ul className="flex items-center gap-x-8">
+						<ul className="hidden lg:flex items-center gap-x-8">
 							{navLinks.map(({ href, label }) => {
 								return (
 									<li key={label}>
@@ -59,7 +59,7 @@ export default function HomePage() {
 						<div className="flex items-center gap-x-6">
 							<button
 								type="button"
-								className="text-base font-GeneralSansMedium text-white hover:cursor-pointer"
+								className="text-base  hidden md:block font-GeneralSansMedium text-white hover:cursor-pointer"
 							>
 								Buy
 							</button>
@@ -69,16 +69,16 @@ export default function HomePage() {
 									className="h-[100px] flex items-center px-8 text-[#131313] font-GeneralSansMedium text-base 
                     bg-brandGradient transition-all duration-500 hover:cursor-pointer"
 								>
-									<span>Log In</span>
+									<span>Start</span>
 								</button>
 							</Link>
 						</div>
 					</nav>
 				</header>
 
-				<div className="flex items-end mt-[90px] container mx-auto justify-between gap-x-24">
-					<div className="max-w-[787px]">
-						<h1 className="text-[6rem] leading-[120%] font-ClashDisplayMedium text-white">
+				<div className="flex flex-col lg:flex-row items-end mt-[90px] container mx-auto justify-between gap-x-24 pr-6 lg:pr-0">
+					<div className="lg:max-w-[787px]">
+						<h1 className="text-[3rem] lg:text-[6rem] leading-[120%] font-ClashDisplayMedium text-white">
 							Blockchain for a Sustainable Future
 						</h1>
 						<p className="max-w-[550px] block mt-4 text-[1.125rem] leading-[160%] font-GeneralSansRegular text-white">
@@ -90,23 +90,26 @@ export default function HomePage() {
 						{/* <Countdown releaseDate={new Date("04-30-2025").toISOString()} /> */}
 					</div>
 
-					{/* <video
-						className="hidden md:block max-w-[1000px] w-full h-[1000px] bg-transparent absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none"
+					<video
+						className="hidden lg:block max-w-[1000px] w-full h-[1000px] bg-transparent absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none"
 						muted
 						autoPlay
 						playsInline
 						loop
 					>
 						<source src="/sample.webm" />
-					</video> */}
+					</video>
 				</div>
 			</section>
 
-			<section className="py-[200px] relative overflow-hidden" id="second">
-				<div className="absolute right-0 bottom-0 w-[468px] h-[312px] rotate-[-25deg] blur-[256px] rounded-[468px] bg-[rgba(15,248,136,0.35)] z-0" />
-				<div className="absolute left-0 top-0 w-[468px] h-[312px] rotate-[-25deg] blur-[256px] rounded-[468px] bg-[rgba(15,248,136,0.35)] z-0" />
+			<section
+				className="lg:py-[200px] py-20 relative overflow-hidden px-6 lg:px-0"
+				id="second"
+			>
+				<div className="hidden lg:block absolute right-0 bottom-0 w-[468px] h-[312px] rotate-[-25deg] blur-[256px] rounded-[468px] bg-[rgba(15,248,136,0.35)] z-0" />
+				<div className="hidden lg:block absolute left-0 top-0 w-[468px] h-[312px] rotate-[-25deg] blur-[256px] rounded-[468px] bg-[rgba(15,248,136,0.35)] z-0" />
 				<div className="max-w-[1120px] mx-auto">
-					<h2 className="text-[5rem] leading-[120%] font-ClashDisplayMedium text-white">
+					<h2 className="text-[3rem] lg:text-[5rem] leading-[120%] font-ClashDisplayMedium text-white">
 						Secure Your Tokens Early and Save
 					</h2>
 					<p className="max-w-[550px] block mt-4 text-[1.125rem] leading-[160%] font-GeneralSansRegular text-white">
@@ -114,36 +117,36 @@ export default function HomePage() {
 					</p>
 
 					<ul className="w-full flex flex-col mt-12 z-20">
-						<li className="bg-[rgba(14,62,52,0.2)] w-full px-6 rounded-[12px] h-[104px] flex justify-between items-center gap-x-6">
-							<strong className="text-[#FAFF00] font-ClashDisplayMedium text-[1.5rem]">
+						<li className="bg-[rgba(14,62,52,0.2)] w-full px-6 rounded-[12px] h-[104px] flex justify-between items-center gap-x-3 lg:gap-x-6">
+							<strong className="text-[#FAFF00] font-ClashDisplayMedium text-[1rem] lg:text-[1.5rem]">
 								1. Seed :
 							</strong>
-							<span className="text-[1.25rem] text-white font-GeneralSansMedium">
+							<span className="text-[0.75rem] lg:text-[1.25rem] text-white font-GeneralSansMedium">
 								R$X.XX / Token{" "}
 							</span>
-							<span className="text-[1.25rem] text-white font-GeneralSansMedium">
+							<span className="text-[0.75rem] lg:text-[1.25rem] text-white font-GeneralSansMedium">
 								Hard Cap: R$XXX,XXX
 							</span>
 						</li>
-						<li className="-full px-6 rounded-[12px] h-[104px] flex justify-between items-center gap-x-6">
-							<strong className="text-[#FAFF00] font-ClashDisplayMedium text-[1.5rem]">
+						<li className="w-full px-6 rounded-[12px] h-[104px] flex justify-between items-center gap-x-3 lg:gap-x-6">
+							<strong className="text-[#FAFF00] font-ClashDisplayMedium text-[1rem] lg:text-[1.5rem]">
 								2. Private :
 							</strong>
-							<span className="text-[1.25rem] text-white font-GeneralSansMedium">
+							<span className="text-[0.75rem] lg:text-[1.25rem] text-white font-GeneralSansMedium">
 								R$X.XX / Token{" "}
 							</span>
-							<span className="text-[1.25rem] text-white font-GeneralSansMedium">
+							<span className="text-[0.75rem] lg:text-[1.25rem] text-white font-GeneralSansMedium">
 								Hard Cap: R$XXX,XXX
 							</span>
 						</li>
-						<li className="bg-[rgba(14,62,52,0.2)] w-full px-6 rounded-[12px] h-[104px] flex justify-between items-center gap-x-6">
-							<strong className="text-[#FAFF00] font-ClashDisplayMedium text-[1.5rem]">
+						<li className="bg-[rgba(14,62,52,0.2)] w-full px-6 rounded-[12px] h-[104px] flex justify-between items-center gap-x-3 lg:gap-x-6">
+							<strong className="text-[#FAFF00] font-ClashDisplayMedium text-[1rem] lg:text-[1.5rem]">
 								3. Public :
 							</strong>
-							<span className="text-[1.25rem] text-white font-GeneralSansMedium">
+							<span className="text-[0.75rem] lg:text-[1.25rem] text-white font-GeneralSansMedium">
 								R$X.XX / Token{" "}
 							</span>
-							<span className="text-[1.25rem] text-white font-GeneralSansMedium">
+							<span className="text-[0.75rem] lg:text-[1.25rem] text-white font-GeneralSansMedium">
 								Hard Cap: R$XXX,XXX
 							</span>
 						</li>
