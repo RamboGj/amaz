@@ -1,35 +1,36 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
-import { Countdown } from "./_components/Countdown/Countdown";
-import { StepsSection } from "./_components/StepsSection/StepsSection";
-import { Footer } from "./_components/Footer/Footer";
+// import Image from "next/image";
+// import Link from "next/link";
+// import { Countdown } from "./_components/Countdown/Countdown";
+// import { StepsSection } from "./_components/StepsSection/StepsSection";
+// import { Footer } from "./_components/Footer/Footer";
 
 export default function HomePage() {
-	const navLinks = [
-		{
-			label: "Explore",
-			href: "#",
-		},
-		{
-			label: "Market",
-			href: "#",
-		},
+	// const navLinks = [
+	// 	{
+	// 		label: "Explore",
+	// 		href: "#",
+	// 	},
+	// 	{
+	// 		label: "Market",
+	// 		href: "#",
+	// 	},
 
-		{
-			label: "Community",
-			href: "#",
-		},
-		{
-			label: "About",
-			href: "#",
-		},
-	];
+	// 	{
+	// 		label: "Community",
+	// 		href: "#",
+	// 	},
+	// 	{
+	// 		label: "About",
+	// 		href: "#",
+	// 	},
+	// ];
 
 	return (
 		<div className="bg-[#131313]">
-			<section
+			hello page
+			{/* <section
 				id="hero"
 				className="bg-[url('/Elements.png')] bg-cover bg-center pb-[200px]"
 			>
@@ -153,7 +154,7 @@ export default function HomePage() {
 
 			<StepsSection />
 
-			<Footer />
+			<Footer /> */}
 		</div>
 	);
 }
