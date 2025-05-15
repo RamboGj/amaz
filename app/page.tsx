@@ -1,5 +1,8 @@
 "use client";
 
+import { Footer } from "./_components/Footer/Footer";
+import { StepsSection } from "./_components/StepsSection/StepsSection";
+
 // import Image from "next/image";
 // import Link from "next/link";
 // import { Countdown } from "./_components/Countdown/Countdown";
@@ -152,9 +155,9 @@ export default function HomePage() {
 				</div>
 			</section>
 
+			 */}
 			<StepsSection />
-
-			<Footer /> */}
+			<Footer />
 		</div>
 	);
 }
