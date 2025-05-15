@@ -1,35 +1,35 @@
 "use client";
 
-// import Image from "next/image";
-// import Link from "next/link";
+import Image from "next/image";
+import Link from "next/link";
 // import { Countdown } from "./_components/Countdown/Countdown";
 import { StepsSection } from "./_components/StepsSection/StepsSection";
 import { Footer } from "./_components/Footer/Footer";
 
 export default function HomePage() {
-	// const navLinks = [
-	// 	{
-	// 		label: "Explore",
-	// 		href: "#",
-	// 	},
-	// 	{
-	// 		label: "Market",
-	// 		href: "#",
-	// 	},
+	const navLinks = [
+		{
+			label: "Explore",
+			href: "#",
+		},
+		{
+			label: "Market",
+			href: "#",
+		},
 
-	// 	{
-	// 		label: "Community",
-	// 		href: "#",
-	// 	},
-	// 	{
-	// 		label: "About",
-	// 		href: "#",
-	// 	},
-	// ];
+		{
+			label: "Community",
+			href: "#",
+		},
+		{
+			label: "About",
+			href: "#",
+		},
+	];
 
 	return (
 		<div className="bg-[#131313]">
-			{/* <section
+			<section
 				id="hero"
 				className="bg-[url('/Elements.png')] bg-cover bg-center pb-[200px]"
 			>
@@ -87,10 +87,10 @@ export default function HomePage() {
 							future. Join the movement for real impact.
 						</p>
 
-						<Countdown releaseDate={new Date("04-30-2025").toISOString()} />
+						{/* <Countdown releaseDate={new Date("04-30-2025").toISOString()} /> */}
 					</div>
 
-					<video
+					{/* <video
 						className="hidden md:block max-w-[1000px] w-full h-[1000px] bg-transparent absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none"
 						muted
 						autoPlay
@@ -98,7 +98,7 @@ export default function HomePage() {
 						loop
 					>
 						<source src="/sample.webm" />
-					</video>
+					</video> */}
 				</div>
 			</section>
 
@@ -149,7 +149,7 @@ export default function HomePage() {
 						</li>
 					</ul>
 				</div>
-			</section> */}
+			</section>
 
 			<StepsSection />
 			<Footer />
