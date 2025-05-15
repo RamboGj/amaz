@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { PostHogProvider } from "./_providers/PostHogProvider";
 
 export const metadata: Metadata = {
 	// metadataBase: new URL("https://www.Amaz.com.br"),
@@ -45,17 +46,15 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children,
+	children,
 }: Readonly<{
-  children: React.ReactNode;
+	children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body
-        className="antialiased bg-[#010D0B]"
-      >
-        {children}
-      </body>
-    </html>
-  );
+	return (
+		<html lang="en">
+			<body className="antialiased bg-[#010D0B]">
+				<PostHogProvider>{children}</PostHogProvider>
+			</body>
+		</html>
+	);
 }
