@@ -63,7 +63,7 @@ export default function HomePage() {
 							>
 								Buy
 							</button>
-							<Link href={"/login"}>
+							<Link href={"/dashboard"}>
 								<button
 									type="button"
 									className="h-[100px] flex items-center px-8 text-[#131313] font-GeneralSansMedium text-base 

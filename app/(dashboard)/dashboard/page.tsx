@@ -42,7 +42,7 @@ import {
 } from "@/components/ui/table";
 import { toast } from "sonner";
 import { magic } from "@/app/utils/magic";
-import { Skeleton } from "@/components/Skeleton/Skeleton";
+import { Skeleton } from "@/components/atoms/Skeleton/Skeleton";
 
 // Mock token data - replace with your actual token details
 const TOKEN_DETAILS = {
