@@ -193,7 +193,7 @@ export default function Dashboard() {
 
 	if (isLoading) {
 		return (
-			<div className="container mx-auto py-10 space-y-8">
+			<div className="container mx-auto py-10 space-y-8  px-6 lg:px-0">
 				<div className="flex justify-between items-center">
 					<h1 className="text-3xl text-zinc-200 font-ClashDisplayBold">
 						Token Dashboard
@@ -211,7 +211,7 @@ export default function Dashboard() {
 
 	if (!isConnected) {
 		return (
-			<div className="container mx-auto py-10 flex flex-col items-center justify-center min-h-[70vh]">
+			<div className="container mx-auto py-10 flex flex-col items-center justify-center min-h-[70vh] px-6 lg:px-0">
 				<Card className="w-full max-w-md">
 					<CardHeader>
 						<CardTitle className="text-2xl">Connect Your Wallet</CardTitle>
