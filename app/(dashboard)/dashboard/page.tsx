@@ -3,11 +3,11 @@
 
 import { useEffect, useState } from "react";
 import {
-	ArrowLeftRight,
-	ChevronDown,
+	// ArrowLeftRight,
+	// ChevronDown,
 	Copy,
 	ExternalLink,
-	LogOut,
+	// LogOut,
 	RefreshCw,
 	Wallet,
 } from "lucide-react";
@@ -22,15 +22,15 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import {
-	Dialog,
-	DialogContent,
-	DialogDescription,
-	DialogFooter,
-	DialogHeader,
-	DialogTitle,
-	DialogTrigger,
-} from "@/components/ui/dialog";
+// import {
+// 	Dialog,
+// 	DialogContent,
+// 	DialogDescription,
+// 	DialogFooter,
+// 	DialogHeader,
+// 	DialogTitle,
+// 	DialogTrigger,
+// } from "@/components/ui/dialog";
 import { Separator } from "@/components/ui/separator";
 import {
 	Table,
@@ -85,10 +85,10 @@ const MOCK_TRANSACTIONS = [
 export default function Dashboard() {
 	const [isConnected, setIsConnected] = useState(false);
 	const [account, setAccount] = useState("");
-	const [balance, setBalance] = useState("0");
+	const [balance] = useState("0");
 	const [isLoading, setIsLoading] = useState(true);
 	const [transactions] = useState(MOCK_TRANSACTIONS);
-	const [isSwitchWalletOpen, setIsSwitchWalletOpen] = useState(false);
+	// const [isSwitchWalletOpen, setIsSwitchWalletOpen] = useState(false);
 
 	useEffect(() => {
 		const initWallet = async () => {
@@ -134,11 +134,11 @@ export default function Dashboard() {
 		}
 	};
 
-	const disconnectWallet = () => {
-		setAccount("");
-		setBalance("0");
-		setIsConnected(false);
-	};
+	// const disconnectWallet = () => {
+	// 	setAccount("");
+	// 	setBalance("0");
+	// 	setIsConnected(false);
+	// };
 
 	// const fetchTokenBalance = async () => {
 	// 	try {
@@ -253,7 +253,7 @@ export default function Dashboard() {
 						Logout
 					</Button>
 					<Button
-						className="text-green500 hover:cursor-pointer  border border-green500 hover:text-green500 bg-zinc-900/50 backdrop-blur-2xl"
+						className="text-green500 hover:cursor-pointer  border border-white/10 hover:text-green500 bg-zinc-900 hover:bg-zinc-800 transition duration-500 backdrop-blur-2xl"
 						variant="outline"
 						size="sm"
 						onClick={refreshData}
@@ -261,7 +261,7 @@ export default function Dashboard() {
 						<RefreshCw className="mr-2 h-4 w-4 text-green500" />
 						Refresh
 					</Button>
-					<Dialog
+					{/* <Dialog
 						open={isSwitchWalletOpen}
 						onOpenChange={setIsSwitchWalletOpen}
 					>
@@ -341,7 +341,7 @@ export default function Dashboard() {
 								</Button>
 							</DialogFooter>
 						</DialogContent>
-					</Dialog>
+					</Dialog> */}
 				</div>
 			</div>
 
@@ -427,6 +427,9 @@ export default function Dashboard() {
 					</CardContent>
 					<CardFooter>
 						<Button
+							onClick={() => {
+								magic?.wallet.showUI();
+							}}
 							className="w-full bg-green500 text-[#131313] font-GeneralSansMedium hover:bg-[#67d269]/90 transition duration-500 hover:cursor-pointer"
 							size="lg"
 						>

@@ -59,8 +59,8 @@ export function AppSidebar() {
 										isActive={isActive}
 										className={
 											isActive
-												? " text-zinc-900  hover:text-[#67d269]"
-												: "text-zinc-200 hover:bg-zinc-800 bg-transparent"
+												? " text-zinc-900  hover:text-[#67d269] hover:cursor-pointer"
+												: "text-zinc-200 hover:bg-zinc-800 bg-transparent hover:cursor-pointer"
 										}
 									>
 										<button
