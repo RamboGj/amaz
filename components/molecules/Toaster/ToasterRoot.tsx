@@ -7,7 +7,7 @@ import { ToasterContext } from "./ToasterProvider";
 type ToastRootProps = ComponentProps<"div">;
 
 const toasterRootStyle = tv({
-	base: "overflow-hidden max-w-[469px] border border-alphaBlack08 bg-alphaBlack04 rounded-[16px] backdrop-blur-[24px] z-50 data-[visible=false]:animate-fadeOutLeft data-[visible=true]:animate-fadeInRight",
+	base: "overflow-hidden max-w-[469px] border border-white/10 bg-white/[5%] rounded-[16px] backdrop-blur-[24px] z-50 data-[visible=false]:animate-fadeOutLeft data-[visible=true]:animate-fadeInRight",
 });
 
 export function ToasterRoot({ className, ...rest }: ToastRootProps) {

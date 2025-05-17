@@ -40,9 +40,9 @@ import {
 	TableHeader,
 	TableRow,
 } from "@/components/ui/table";
-import { toast } from "sonner";
 import { magic } from "@/app/utils/magic";
 import { Skeleton } from "@/components/atoms/Skeleton/Skeleton";
+import { toast } from "@/lib/toast";
 
 // Mock token data - replace with your actual token details
 const TOKEN_DETAILS = {
@@ -128,7 +128,10 @@ export default function Dashboard() {
 			setIsConnected(true);
 			setAccount(result?.[0] || "");
 		} catch {
-			toast.error("Something went wrong...");
+			toast.error({
+				title: "Error",
+				description: "Something went wrong...",
+			});
 		} finally {
 			setIsLoading(false);
 		}
@@ -165,7 +168,10 @@ export default function Dashboard() {
 
 	const copyToClipboard = (text: string) => {
 		navigator.clipboard.writeText(text);
-		toast("Wallet address copied to clipboard");
+		toast.success({
+			title: "Success",
+			description: "Wallet address copied to clipboard",
+		});
 	};
 
 	const formatAddress = (address: string) => {
@@ -174,8 +180,11 @@ export default function Dashboard() {
 
 	const refreshData = () => {
 		if (account) {
+			toast.success({
+				title: "Success",
+				description: "Your wallet data has been refreshed",
+			});
 			// fetchTokenBalance("");
-			toast("Your wallet data has been refreshed");
 		}
 	};
 

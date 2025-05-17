@@ -28,6 +28,8 @@
 	--background-image-brandGradient: var(--brandGradient);
 
 	--animate-skeleton: skeletonKeyframe 3s linear infinite;
+	--animate-fadeInRight: fadeInRight 1s linear;
+	--animate-fadeOutLeft: fadeOutLeft 1s linear;
 
 	--animate-float: float 5s ease-in-out infinite;
 
@@ -96,6 +98,25 @@
 	@keyframes skeletonKeyframe {
 		to {
 			transform: translateX(200%);
+		}
+	}
+
+	@keyframes fadeInRight {
+		from {
+			opacity: "0";
+		}
+		to {
+			transform: "translate(3rem)";
+			opacity: "1";
+		}
+	}
+
+	@keyframes fadeOutLeft {
+		from {
+			opacity: "1";
+		}
+		to {
+			opacity: "0";
 		}
 	}
 

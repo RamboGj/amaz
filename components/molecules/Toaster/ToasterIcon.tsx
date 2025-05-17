@@ -11,10 +11,10 @@ const toasterIconStyle = tv({
 	base: "flex shrink-0",
 	variants: {
 		state: {
-			success: "text-success500",
-			error: "text-error500",
-			warning: "text-warning500",
-			neutral: "text-feedbackNeutral500",
+			success: "text-green500",
+			error: "text-red-500",
+			warning: "text-amber-500",
+			neutral: "text-blue-500",
 		},
 	},
 });

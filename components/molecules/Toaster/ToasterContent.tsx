@@ -17,16 +17,16 @@ const toasterContentStyle = tv({
 	variants: {
 		state: {
 			success: {
-				titleStyle: "text-success500",
+				titleStyle: "text-green500",
 			},
 			error: {
-				titleStyle: "text-error500",
+				titleStyle: "text-red-500",
 			},
 			warning: {
-				titleStyle: "text-warning500",
+				titleStyle: "text-amber-500",
 			},
 			neutral: {
-				titleStyle: "text-feedbackNeutral500",
+				titleStyle: "text-blue-500",
 			},
 		},
 	},
